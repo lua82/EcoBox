@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBox | El mundo invisible de los microplásticos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- PANTALLA INICIAL: SOLO LA CAJA -->
+
+<section id="home" class="screen active home-screen">
+  <div class="home-background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="sparkles"></div>
+  </div>
+
+  <div class="home-logo">🌿 ECOBOX</div>
+
+  <div class="home-content">
+    <span class="home-tag">DESCUBRE LO QUE NO PUEDES VER</span>
+    <h1>El problema está<br>más cerca de lo que <span>imaginas.</span></h1>
+    <p>Una experiencia interactiva para descubrir el mundo de los microplásticos.</p>
+
+    <button class="big-box-button" id="bigBoxButton" onclick="openBox()">
+      <div class="box-light"></div>
+      <div class="box-lid" id="mainBoxLid">
+        <span>🌱 ECOBOX</span>
+      </div>
+      <div class="box-front">
+        <span class="box-leaf">♻</span>
+        <strong>OPEN ME</strong>
+        <small>MICROPLÁSTICOS · EL PROBLEMA INVISIBLE</small>
+      </div>
+      <div class="box-side"></div>
+      <div class="box-bottom"></div>
+    </button>
+
+    <div class="click-instruction" id="clickInstruction">
+      <span class="pulse-dot"></span>
+      HAZ CLIC EN LA CAJA PARA DESCUBRIR SU INTERIOR
+    </div>
+  </div>
+
+  <div class="home-footer">
+    <span>MICROPLÁSTICOS</span>
+    <span>·</span>
+    <span>EDUCACIÓN</span>
+    <span>·</span>
+    <span>ACCIÓN</span>
+  </div>
+</section>
+
+
+<!-- EXPLORACIÓN: OBJETOS DE LA CAJA -->
+
+<section id="explore" class="screen explore-screen">
+  <header class="inside-header">
+    <button class="mini-brand" onclick="showScreen('home')">🌿 EcoBox</button>
+    <span>EXPLORA · APRENDE · ACTÚA</span>
+  </header>
+
+  <div class="explore-heading">
+    <span class="eyebrow">¡LA CAJA ESTÁ ABIERTA!</span>
+    <h2>Tu aventura <span>comienza aquí.</span></h2>
+    <p>Dentro de EcoBox encontrarás tres objetos. Cada uno guarda una parte de la historia de los microplásticos.</p>
+  </div>
+
+  <div class="box-items-scene">
+    <div class="items-glow"></div>
+
+    <button class="item-card book-card" onclick="showScreen('book')">
+      <div class="item-image">
+        <img src="https://www.thegreensideofpink.com/wp-content/uploads/2024/10/Microplasticos_ambiente.jpg" alt="Libro abierto">
+        <span class="item-number">01</span>
+      </div>
+      <div class="item-info">
+        <span class="item-category">DESCUBRE</span>
+        <h3>Explora lo invisible</h3>
+        <p>Conoce el mundo invisible de los microplásticos.</p>
+        <span class="item-link">EXPLORAR ↗</span>
+      </div>
+    </button>
+
+    <button class="item-card letter-card" onclick="showScreen('letter')">
+      <div class="item-image">
+        <img src="https://hqscomcafe.com.br/wp-content/uploads/2019/02/curiosidades-800x445.jpg" alt="Carta y papel">
+        <span class="item-number">02</span>
+      </div>
+      <div class="item-info">
+        <span class="item-category">SORPRÉNDETE</span>
+        <h3>Microdatos</h3>
+        <p>Revela curiosidades y descubre lo que no sabías.</p>
+        <span class="item-link">REVELAR ↗</span>
+      </div>
+    </button>
+
+    <button class="item-card recycle-card" onclick="showScreen('alternatives')">
+      <div class="item-image">
+        <img src="https://stakeholders.com.pe/wp-content/uploads/2020/06/reciclajee.jpg" alt="Reciclaje y naturaleza">
+        <span class="item-number">03</span>
+      </div>
+      <div class="item-info">
+        <span class="item-category">TRANSFORMA</span>
+        <h3>Elige mejor</h3>
+        <p>Encuentra alternativas para reducir el plástico.</p>
+        <span class="item-link">DESCUBRIR ↗</span>
+      </div>
+    </button>
+  </div>
+
+  <div class="extra-activities">
+    <div class="extra-title">
+      <span class="eyebrow">TU SIGUIENTE MISIÓN</span>
+      <h2>Ahora te toca actuar.</h2>
+    </div>
+
+    <button class="extra-card" onclick="showScreen('challenge')">
+      <span class="extra-icon">🌎</span>
+      <div>
+        <small>EXPERIENCIA 01</small>
+        <h3>Reto de los 7 días</h3>
+        <p>Conviértete en EcoInvestigador.</p>
+      </div>
+      <span class="extra-arrow">↗</span>
+    </button>
+
+    <button class="extra-card" onclick="showScreen('quiz')">
+      <span class="extra-icon">🧠</span>
+      <div>
+        <small>EXPERIENCIA 02</small>
+        <h3>EcoQuiz</h3>
+        <p>Demuestra todo lo que aprendiste.</p>
+      </div>
+      <span class="extra-arrow">↗</span>
+    </button>
+  </div>
+</section>
+
+
+<!-- LIBRO INTERACTIVO -->
+
+<section id="book" class="screen learning-screen">
+  <button class="back-btn" onclick="showScreen('explore')">← VOLVER A LA CAJA</button>
+
+  <div class="learning-hero book-hero">
+    <div>
+      <span class="eyebrow">OBJETO 01 · EXPLORA LO INVISIBLE</span>
+      <h2>Bienvenido al mundo <span>invisible.</span></h2>
+      <p>Desliza por los capítulos, observa las imágenes y descubre cómo los microplásticos forman parte de nuestro entorno.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=900&auto=format&fit=crop&q=85" alt="Investigación científica en laboratorio">
+  </div>
+
+  <div class="chapter-progress">
+    <span id="chapterCounter">CAPÍTULO 01 DE 06</span>
+    <div><span id="chapterProgress"></span></div>
+  </div>
+
+  <div class="chapter-navigation" id="chapterNavigation"></div>
+  <article class="chapter-stage" id="chapterContent"></article>
+
+  <div class="chapter-controls">
+    <button class="secondary-btn" onclick="changeChapter(-1)">← Anterior</button>
+    <button class="primary-btn" id="nextChapter" onclick="changeChapter(1)">
+  Siguiente capítulo →</button>
+  </div>
+</section>
+
+
+<!-- CARTA DE CURIOSIDADES -->
+
+<section id="letter" class="screen learning-screen">
+  <button class="back-btn" onclick="showScreen('explore')">← VOLVER A LA CAJA</button>
+
+  <div class="learning-hero letter-hero">
+    <div>
+      <span class="eyebrow">OBJETO 02 · MICRODATOS</span>
+      <h2>Mensajes que el planeta quiere <span>contarte.</span></h2>
+      <p>Hay detalles que pasan desapercibidos. Abre cada sobre para descubrir datos sorprendentes y conocer qué está investigando la ciencia.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=900&auto=format&fit=crop&q=85" alt="Plantas verdes">
+  </div>
+
+  <div class="letter-intro">
+    <div class="letter-seal">✉</div>
+    <div>
+      <span class="eyebrow">MENSAJE ESPECIAL</span>
+      <h3>Una carta desde nuestro planeta</h3>
+      <p>Selecciona los sobres. Cada uno tiene un mensaje oculto.</p>
+    </div>
+  </div>
+
+  <div class="envelope-grid" id="envelopeGrid"></div>
+
+  <div class="science-note">
+    <span>🔬</span>
+    <div>
+      <h3>¿Qué sabemos y qué seguimos investigando?</h3>
+      <p>Los microplásticos se han detectado en distintos ambientes y se estudian sus posibles efectos. Sin embargo, todavía existen preguntas científicas sobre la exposición y sus consecuencias a largo plazo. Es importante distinguir entre hallazgos comprobados e hipótesis.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ALTERNATIVAS -->
+
+<section id="alternatives" class="screen learning-screen">
+  <button class="back-btn" onclick="showScreen('explore')">← VOLVER A LA CAJA</button>
+
+  <div class="learning-hero alternatives-hero">
+    <div>
+      <span class="eyebrow">OBJETO 03 · ELIGE MEJOR</span>
+      <h2>Pequeñas decisiones,<br><span>grandes cambios.</span></h2>
+      <p>Explora situaciones cotidianas, elige alternativas y descubre cómo puedes contribuir a reducir los residuos plásticos.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&auto=format&fit=crop&q=85" alt="Manos sosteniendo una planta">
+  </div>
+
+  <div class="choice-heading">
+    <span class="eyebrow">ELIGE TU SITUACIÓN</span>
+    <h3>¿Qué harías en este caso?</h3>
+  </div>
+
+  <div class="situation-grid" id="situationGrid"></div>
+  <div class="alternative-result" id="alternativeResult">
+    <span class="result-placeholder">🌱</span>
+    <h3>Selecciona una situación para comenzar.</h3>
+    <p>Descubrirás una alternativa y aprenderás por qué puede ayudar.</p>
+  </div>
+
+  <div class="three-rules">
+    <article><span>01</span><div>♻️</div><h3>Reducir</h3><p>Evitar el consumo de plástico innecesario.</p></article>
+    <article><span>02</span><div>🔄</div><h3>Reutilizar</h3><p>Dar más usos a los objetos siempre que sea seguro.</p></article>
+    <article><span>03</span><div>🌎</div><h3>Reciclar</h3><p>Separar correctamente los residuos según las reglas locales.</p></article>
+  </div>
+</section>
+
+
+<!-- RETO DE 7 DÍAS -->
+
+<section id="challenge" class="screen learning-screen">
+  <button class="back-btn" onclick="showScreen('explore')">← VOLVER A LA CAJA</button>
+
+  <div class="challenge-banner">
+    <span class="eyebrow">MISIÓN ESPECIAL ECOBOX</span>
+    <h2>7 días para convertirte en <span>EcoInvestigador.</span></h2>
+    <p>Investiga tu entorno, reúne evidencias y diseña una propuesta que pueda generar un cambio.</p>
+    <div class="progress-wrap">
+      <div class="progress-info"><strong>Tu progreso</strong><span id="progressText">0 de 7 misiones</span></div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </div>
+  </div>
+
+  <div class="mission-list" id="missionList"></div>
+
+  <div class="certificate" id="certificate">
+    <div>🏆</div>
+    <h3>¡Lo lograste!</h3>
+    <p>Has completado las siete misiones y ahora eres parte de los EcoInvestigadores.</p>
+    <strong>INSIGNIA ECOBOX · ECOINVESTIGADOR/A</strong>
+  </div>
+</section>
+
+
+<!-- QUIZ -->
+
+<section id="quiz" class="screen learning-screen">
+  <button class="back-btn" onclick="showScreen('explore')">← VOLVER A LA CAJA</button>
+
+  <div class="quiz-heading">
+    <span class="eyebrow">EXPERIENCIA INTERACTIVA</span>
+    <h2>¿Eres un <span>EcoExperto?</span></h2>
+    <p>Resuelve cinco situaciones y demuestra cuánto sabes sobre los microplásticos.</p>
+  </div>
+
+  <div class="quiz-container" id="quizContainer">
+    <div class="quiz-top"><span id="questionNumber">PREGUNTA 01 / 05</span><span id="quizScore">⭐ 0 puntos</span></div>
+    <div class="quiz-progress"><div id="quizProgress"></div></div>
+    <h3 id="questionText"></h3>
+    <div id="answerOptions" class="answer-options"></div>
+    <div id="feedback" class="feedback"></div>
+    <button class="primary-btn quiz-next" id="nextQuestion" onclick="nextQuestion()" disabled>Continuar →</button>
+  </div>
+
+  <div id="quizResult" class="quiz-result hidden">
+    <span>🌿</span>
+    <h2>¡Experiencia completada!</h2>
+    <p id="finalScore"></p>
+    <p id="finalMessage"></p>
+    <button class="primary-btn" onclick="restartQuiz()">Intentar de nuevo ↻</button>
+    <button class="primary-btn" onclick="finishEcoBox()">
+  Finalizar experiencia EcoBox →
+</button>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-brand">🌿 ECOBOX</div>
+  <p>El cambio comienza cuando hacemos visible lo invisible.</p>
+  <span>MICROPLÁSTICOS · EDUCACIÓN · ACCIÓN</span>
+</footer>
+
+<!-- PANTALLA FINAL ECOBOX -->
+<section id="finalScreen" class="screen final-screen">
+
+  <div class="final-content">
+
+    <span class="eyebrow">ECOBOX · FIN DE LA EXPERIENCIA</span>
+
+    <div class="final-icon">🌎</div>
+
+    <h1>
+      El cambio empieza
+      <span>contigo.</span>
+    </h1>
+
+    <p class="final-intro">
+      Ahora sabes que los microplásticos están más cerca de lo que imaginabas.
+      Aunque son invisibles a simple vista, sus consecuencias merecen nuestra atención.
+    </p>
+
+    <div class="final-message">
+      <div class="final-message-icon">💧</div>
+
+      <h2>Una pequeña decisión puede generar un gran impacto.</h2>
+
+      <p>
+        Reducir el uso de plásticos, reutilizar materiales y elegir alternativas
+        responsables son acciones que ayudan a construir un futuro más sostenible.
+      </p>
+    </div>
+
+    <h3>Antes de cerrar EcoBox, recuerda:</h3>
+
+    <div class="final-cards">
+
+      <div class="final-card">
+        <span>🌱</span>
+        <strong>REDUCE</strong>
+        <p>Evita los plásticos innecesarios.</p>
+      </div>
+
+      <div class="final-card">
+        <span>♻️</span>
+        <strong>REUTILIZA</strong>
+        <p>Dale una segunda vida a los objetos.</p>
+      </div>
+
+      <div class="final-card">
+        <span>🌊</span>
+        <strong>PROTEGE</strong>
+        <p>Cuida los ecosistemas y el agua.</p>
+      </div>
+
+    </div>
+
+    <div class="final-quote">
+      "No podemos cambiar todo de un día para otro,
+      pero sí podemos empezar con una acción."
+    </div>
+
+    <button class="primary-btn final-button" onclick="restartEcoBox()">
+    ↻ Volver a vivir la experiencia
+</button>
+
+    <p class="final-footer">
+      ECOBOX · MENOS PLÁSTICO, MÁS VIDA
+    </p>
+
+  </div>
+
+</section>
+
+</section>
+
+<script src="./script.js"></script>
+</body>
+</html>
